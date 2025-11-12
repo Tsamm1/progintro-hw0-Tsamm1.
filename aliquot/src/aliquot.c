@@ -21,32 +21,32 @@ int main(void){
             printf("%lld\n", num);
         }
        
-        while(1)
+        while(1)//ΥΠΟΛΟΓΙΣΜΟΣ ΑΛΙΚΟΥΟΤ
         {
-            if (len !=0 &&count >=len)
+            if (len !=0 &&count >=len)//ΕΛΕΓΧΟΣ ΜΗΚΟΥΣ ΑΝ ΤΟ ΦΤΑΝΕΙ ΣΤΑΜΑΤΑ 
             {
                 break;
             }
-             long long sum=1;
-        if (num ==1)
+             long long sum=1;// ΤΟ 1 ΕΙΝΑΙ ΔΙΑΙΡΕΤΗΣ ΟΛΩΝ ΤΩΝ ΑΡΙΘΜΩΝ
+        if (num ==1)// ΑΝ ΕΙΝΑΙ 1 ΤΟΤΕ Η ΤΟΤΕ ΤΟ ΑΘΡΟΙΣΜΑ ΕΙΝΑΙ 0 
         {sum=0;}
         else 
         {
-            for (long long i=2;i*i<=num ;i++ )
+            for (long long i=2;i*i<=num ;i++ )//ΕΛΕΓΧΕΙ ΟΛΟΥΣ ΤΟΥΣ ΔΙΑΙΡΕΤΕΣ ΜΕΧΡΙ ΤΗΝ ΤΕΤΡΑΓΩΝΙΚΗ ΡΙΖΑ
             {
-                if (num%i==0)
+                if (num%i==0)//ΕΛΕΓΧΕΙ ΑΝ ΤΟ Ι ΕΙΝΑΙ ΔΙΑΙΡΕΤΗΣ
                 {
                     sum += i;
-                    if(i!=num/i)
+                    if(i!=num/i)//ΕΛΕΓΧΕΙ ΑΝ ΤΟ Ι ΕΙΝΑΙ ΙΔΙΟ ΤΗ ΡΙΖΑ ΤΟΥ NUM
                     {
                     sum+=num/i;
                     }
                 }
             }
         }
-    num=sum;
+    num=sum;//ΑΝΤΙΜΕΤΑΘΕΣΗ ΤΟΥ NUM ΜΕ ΤΟ SUM
     count++;
-    if (num>limit)
+    if (num>limit)//ΕΛΕΓΧΟΣ ΑΝ ΞΕΠΕΡΑΣΕ ΤΟ ΟΡΙΟ 
     {
          printf("Number exceeds maximum supported integer (%lld). Stopping.\n", limit);
         return 1;
